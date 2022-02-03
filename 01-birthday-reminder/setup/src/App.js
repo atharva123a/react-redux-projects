@@ -2,10 +2,17 @@ import React, { useState } from "react";
 import data from "./data";
 import List from "./List";
 function App() {
+  const [people, setPeople] = useState(data);
+
   return (
-    <section className="container">
-      <List data={data} />
-    </section>
+    <main>
+      <section className="container">
+        <h3>{people.length} birthdays today</h3>
+        {/* we pass in only specific data that is important: */}
+        <List people={people} />
+        <button onClick={() => setPeople([])}>Clear All</button>
+      </section>
+    </main>
   );
 }
 

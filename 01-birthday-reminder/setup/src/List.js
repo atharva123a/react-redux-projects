@@ -1,26 +1,20 @@
 import React from "react";
 
-import { useState } from "react";
-
-const List = (props) => {
-  const [data, setData] = useState(props.data);
-
+const List = ({ people }) => {
   return (
     <>
-      <h3>{data.length} birthdays today!</h3>
-      {data.map((item) => {
+      {people.map((person) => {
+        const { name, id, image, age } = person;
         return (
-          <div className="person">
-            <img src={item.image} />
-            <h4>
-              {item.name}
-              <p>{item.age}</p>
-            </h4>
-          </div>
+          <article key={id} className="person">
+            <img src={image} alt={name} />
+            <div>
+              <h4>{name}</h4>
+              <p>{age} years</p>
+            </div>
+          </article>
         );
       })}
-      {/* calling setData and passing in an empty array! */}
-      <button onClick={() => setData([])}>Clear All</button>
     </>
   );
 };
