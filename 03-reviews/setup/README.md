@@ -1,1 +1,1 @@
-[Netlify Link](https://developer-reviews.netlify.app/)
+<a href="https://developer-reviews.netlify.app/" target="_blank">Reviews</a>
