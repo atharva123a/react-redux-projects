@@ -8,7 +8,7 @@
 
 #### useEffect and Conditional Rendering
 
-2. Tours
+2. [Tours](https://travel-info07.netlify.app/)
 3. Reviews
 4. Questions
 5. Menu
