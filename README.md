@@ -4,12 +4,13 @@
 
 #### useState
 
-1. <a href="https://stupefied-pike-4f4612.netlify.app/" target="_blank">Birthday Reminder</a>
+1. [Birthday Reminder](https://stupefied-pike-4f4612.netlify.app/)
 
 #### useEffect and Conditional Rendering
-2. <a href="https://travel-info07.netlify.app/" target="_blank">Tours</a>
-3. <a href="https://developer-reviews.netlify.app/" target="_blank">Reviews</a>
-4. Questions
+
+2. [Tours](https://travel-info07.netlify.app/)
+3. [Reviews](https://developer-reviews.netlify.app/)
+4. [Questions](https://review-questions.netlify.app/)
 5. Menu
 6. Tabs
 7. Slider
