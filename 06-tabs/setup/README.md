@@ -1,3 +1,3 @@
 #### IN ACTION
 
-[Portfolio](https://gatsby-strapi-portfolio-project.netlify.app/)
+[Portfolio](https://awesome-portfolio-01.netlify.app/)

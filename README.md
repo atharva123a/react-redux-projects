@@ -12,7 +12,7 @@
 3. [Reviews](https://developer-reviews.netlify.app/)
 4. [Questions](https://review-questions.netlify.app/)
 5. [Menu](https://restuarant-menu-01.netlify.app/)
-6. Tabs
+6. [Tabs](https://awesome-portfolio-01.netlify.app/)
 7. Slider
 
 #### Forms
