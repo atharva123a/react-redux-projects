@@ -2,15 +2,12 @@ import React, { useState } from "react";
 import Menu from "./Menu";
 import Categories from "./Categories";
 import items from "./data";
+// dynamic inclusion of categories as data is added:
 const allCategories = ["all", ...new Set(items.map((item) => item.category))];
 
 function App() {
   const [categories, setCategories] = useState(allCategories);
   const [menuItems, setMenuItems] = useState(items);
-
-  const changeCat = (category) => {
-    setCategories(category);
-  };
 
   const filterItems = (category) => {
     if (category === "all") {
@@ -18,7 +15,9 @@ function App() {
       return;
     }
 
-    setMenuItems(items.filter((item) => item.category === category));
+    let newItems = items.filter((item) => item.category === category);
+    setMenuItems(newItems);
+    return;
   };
 
   return (
@@ -28,12 +27,8 @@ function App() {
           <h2>Our Menu</h2>
           <div className="underline"></div>
         </div>
-        <div className="btn-container">
-          <Categories categories={categories} filterItems={filterItems} />
-        </div>
-        <div className="section-center">
-          <Menu items={menuItems} />
-        </div>
+        <Categories categories={categories} filterItems={filterItems} />
+        <Menu items={menuItems} />
       </section>
     </main>
   );

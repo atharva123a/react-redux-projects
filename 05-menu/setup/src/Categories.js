@@ -1,21 +1,20 @@
 import React from "react";
 
 const Categories = ({ categories, filterItems }) => {
-  // logic for the categories displayed:
   return (
-    <>
-      {categories.map((category) => {
+    <div className="btn-container">
+      {categories.map((category, index) => {
         return (
           <button
-            key={categories.indexOf(category)}
-            className="filter-btn"
+            key={index}
             onClick={() => filterItems(category)}
+            className="filter-btn"
           >
             {category}
           </button>
         );
       })}
-    </>
+    </div>
   );
 };
 
