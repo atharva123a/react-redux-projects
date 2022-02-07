@@ -6,63 +6,69 @@ const Review = () => {
   // default index:
   const [index, setIndex] = useState(0);
 
-  const { image, name, job, text } = people[index];
+  // using state value:
+  const { id, name, job, image, text } = people[index];
 
-  const checkId = (id) => {
-    if (id < 0) {
+  const checkIndex = (newIndex) => {
+    if (newIndex < 0) {
       return people.length - 1;
-    } else if (id >= people.length) {
+    }
+
+    if (newIndex >= people.length) {
       return 0;
     }
-    return id;
+
+    return newIndex;
   };
 
-  const nextReview = (id) => {
-    let newId = id + 1;
-    newId = checkId(newId);
-    setIndex(newId);
+  const prevIndex = () => {
+    setIndex((curIndex) => {
+      let newIndex = curIndex - 1;
+      return checkIndex(newIndex);
+    });
   };
 
-  const prevReview = (id) => {
-    let newId = id - 1;
-    newId = checkId(newId);
-    setIndex(newId);
+  const nextIndex = () => {
+    setIndex((curIndex) => {
+      let newIndex = curIndex + 1;
+      return checkIndex(newIndex);
+    });
   };
 
-  const surpriseReview = (id) => {
-    let randomId = Math.floor(Math.random() * people.length);
-    if (randomId === id) {
-      randomId += 1;
+  const randomIndex = () => {
+    let newIndex = Math.floor(Math.random() * people.length);
+    if (newIndex === index) {
+      newIndex = newIndex + 1;
     }
-    randomId = checkId(randomId);
-    setIndex(randomId);
+
+    setIndex(() => {
+      return checkIndex(newIndex);
+    });
   };
 
   return (
-    <>
+    <article className="review">
       <div className="img-container">
         <img src={image} alt={name} className="person-img" />
         <span className="quote-icon">
           <FaQuoteRight />
         </span>
       </div>
-      <div>
-        <h4 className="author">{name}</h4>
-        <p className="job">{job}</p>
-        <p className="info">{text}</p>
-        <div className="button-container">
-          <button className="prev-btn" onClick={() => prevReview(index)}>
-            <FaChevronLeft />
-          </button>
-          <button className="next-btn" onClick={() => nextReview(index)}>
-            <FaChevronRight />
-          </button>
-        </div>
-        <button className="random-btn" onClick={() => surpriseReview(index)}>
-          Surprise me!
+      <h4 className="author">{name}</h4>
+      <h4 className="job">{job}</h4>
+      <p className="info">{text}</p>
+      <div className="btn-container">
+        <button className="prev-btn" onClick={prevIndex}>
+          <FaChevronLeft />
+        </button>
+        <button className="next-btn" onClick={nextIndex}>
+          <FaChevronRight />
         </button>
       </div>
-    </>
+      <button className="random-btn" onClick={randomIndex}>
+        surprise me
+      </button>
+    </article>
   );
 };
 
